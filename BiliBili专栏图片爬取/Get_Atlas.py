@@ -190,6 +190,7 @@ class Image:
             with open(self.done_atlas_url_path, "a", encoding='utf-8') as fp:
                 fp.write(url)
                 fp.write("\n")
+            print("第{}个图集爬取完毕。".format(index))
             if index == num - 1:
                 break
 
@@ -201,4 +202,3 @@ if __name__ == '__main__':
     get_image = Image(".")
     get_image.get_images(num=10, headers=Headers)
     print("爬取完成！")
-    pass
